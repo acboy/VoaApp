@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringDef;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
@@ -302,13 +303,20 @@ public class NewsActivity extends AppCompatActivity {
                 vh= (ViewHolder) convertView.getTag();
             }
 
+
             //判断当前的数据是否被收藏
-            vh.itemCollect.setImageResource(R.drawable.news_uncollect);
+            final String tilte = getItem(position).getTitle_cn();
+            final String picUrl= getItem(position).getPic();
+            final String creat_time = getItem(position).getCreatTime();
+
+            if (app.db.getCollect(tilte) == false)
+                vh.itemCollect.setImageResource(R.drawable.news_uncollect);
 
             vh.itemCollect.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //将当前位置的数据存入到收藏表中(title,pic,create_time)
+                    app.db.saveCollect(tilte,picUrl,creat_time);
                     ((ImageView)v).setImageResource(R.drawable.news_collected);
                 }
             });

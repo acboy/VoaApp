@@ -91,5 +91,17 @@ public class DBHelper {
 
         db.close(); //最后关闭数据库连接
     }
+
+    public boolean getCollect(String title){
+        SQLiteDatabase db = conn.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select title from t_collect where title=?",
+                new String[]{title});
+        //判断是否查询到数据
+        if(cursor.moveToNext()) {
+            String json = cursor.getString(0);
+            return true;
+        }
+        return false;
+    }
 }
 

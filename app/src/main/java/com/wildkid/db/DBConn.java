@@ -39,7 +39,9 @@ public class DBConn extends SQLiteOpenHelper {
         //版本升级时执行的方法
         if(newVersion>oldVersion && newVersion==3){
             db.execSQL("drop table if exists json");
+            db.execSQL("drop table if exists t_json");
             db.execSQL("create table t_json(url,json)");
+            db.execSQL("drop table if exists t_collect");
             db.execSQL("create table t_collect(title,pic,create_time)");
         }
     }
