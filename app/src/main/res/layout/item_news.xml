@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="标题"
+        android:textSize="25sp"
+        android:textColor="#000"
+        android:layout_margin="5dp"/>
+
+    <ImageView
+        android:id="@+id/item_pic"
+        android:layout_width="140dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/item_title"/>
+
+    <TextView
+        android:id="@+id/item_countAndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="109阅读次数\n\n2017-06-30"
+        android:textSize="18sp"
+        android:layout_toRightOf="@id/item_pic"
+        android:layout_alignBottom="@id/item_pic"/>
+
+    <ImageView
+        android:id="@+id/item_collect"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_toRightOf="@id/item_countAndTime"
+        android:src="@drawable/news_uncollect"
+        android:layout_alignBottom="@id/item_pic"
+        android:layout_marginStart="30sp"/>
+
+</RelativeLayout>

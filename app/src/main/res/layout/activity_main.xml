@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wildkid.voaapp.MainActivity"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ms2"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_bg"
+        android:layout_below="@id/img"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <!--字体大小的单位: sp (scaled pixel)-->
+        <TextView
+            android:id="@+id/nameLabel"
+            style="@style/Label"
+            android:text="@string/username"/>
+
+        <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:layout_toRightOf="@id/nameLabel"
+            android:layout_alignBaseline="@id/nameLabel"/>
+
+        <TextView
+            android:id="@+id/passwdLabel"
+            style="@style/Label"
+            android:text="@string/password"
+            android:layout_below="@id/nameLabel"/>
+
+        <!--android:inputType="textPassword"
+            输入的内容为字符密码 -->
+        <EditText
+            android:id="@+id/passwdEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_toRightOf="@id/passwdLabel"
+            android:background="@android:drawable/edit_text"
+            android:layout_alignBaseline="@id/passwdLabel"/>
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loginBtn"
+            android:layout_below="@id/passwdEt"
+            android:layout_alignRight="@id/passwdEt"
+            android:layout_marginRight="20sp"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:onClick="login"
+            android:background="@drawable/login_btn"/>
+
+        <TextView
+            android:id="@+id/lessPasswdTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lessPwd"
+            android:textColor="#449"
+            android:textSize="25sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="50dp"
+            android:layout_alignBottom="@id/loginBtn"/>
+
+        <TextView
+            android:id="@+id/errorMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#f00"
+            android:layout_margin="20dp"
+            android:text="错误的信息"
+            android:layout_below="@id/lessPasswdTv"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

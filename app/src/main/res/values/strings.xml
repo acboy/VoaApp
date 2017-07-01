@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">VOA山寨英语</string>
+
+    <!--登录页面-->
+    <string name="username">账号</string>
+    <string name="password">口令</string>
+    <string name="lessPwd">忘记密码</string>
+    <string name="loginBtn">登录</string>
+
+
+</resources>
